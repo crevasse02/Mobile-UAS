@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Contacts</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="creation/create">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="dark">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-segment (ionChange)="onFilterUpdate($event)" value="all" color="tertiary">
+          <ion-segment-button value="All contacts" class="color-seg">All Contacts</ion-segment-button>
+          <ion-segment-button value="Priority contacts" class="color-seg">Priority Contacts</ion-segment-button>
+        </ion-segment>
+
+        <ion-list color="tertiary">
+          <ion-item-sliding *ngFor="let contact of contacts" #slidingItem color="tertiary">
+            <ion-item [routerLink]="['./', contact.id]" color="tertiary">
+              <ion-avatar slot="start">
+                <ion-img [src]="contact.imageUrl"></ion-img>
+              </ion-avatar>
+              <ion-label slot="start">{{contact.name}}</ion-label>
+              <ion-icon name="mail-outline" slot="end"></ion-icon><span slot="end">{{contact.phone.length}}</span>
+              <ion-icon name="call-outline" slot="end"></ion-icon><span slot="end">{{contact.email.length}}</span>
+            </ion-item>
+           
+            <ion-item-options side="end">
+              <ion-item-option (click)="star(contact,slidingItem)"><ion-icon slot="icon-only" name="star"></ion-icon></ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Mobile_crossPlatform",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

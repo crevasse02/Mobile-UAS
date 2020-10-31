@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="placesMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Discover Places</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{headline?.title}}</ion-card-title>
+      <ion-card-subtitle>{{headline_price}} / NIGHT</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="{{headline?.imageUrl}}" style="margin-bottom: 10px;"></ion-img>
+      <ion-label>
+        <p>{{headline?.description}}</p>
+        <ion-button color="primary" fill="clear">More</ion-button>
+      </ion-label>
+      
+    </ion-card-content>
+  </ion-card>
+<ion-list>
+  <ion-card>
+    <ion-item *ngFor="let place of cardlist" [routerLink]="['./', place.id]">
+      <ion-thumbnail slot="start">
+        <img [src]="place.imageUrl" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>{{place.title}}</h4>
+        <p>{{place.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-list>
+</ion-content>

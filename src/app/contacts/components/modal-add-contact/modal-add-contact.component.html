@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title class="ion-text-center">Add Contact</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <ion-list>
+    <ion-item color="light">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input id="name"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input id="phone-number"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input id="email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="onSave()" color="success">Save Contact</ion-button>
+</ion-content>

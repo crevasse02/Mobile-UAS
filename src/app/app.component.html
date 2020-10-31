@@ -1,3 +1,56 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="recipesMenu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>UMN Recipes</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toogle menu="recipesMenu">
+          <ion-item lines="none" routerLink="/recipes/tabs/discover">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon>
+            <ion-label>Discover Recipes</ion-label>
+          </ion-item>
+        </ion-menu-toogle>
+        <ion-menu-toogle menu="recipesMenu">
+          <ion-item lines="none" routerLink="/recipes/tabs/creation">
+            <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+            <ion-label>My Creations</ion-label>
+          </ion-item>
+        </ion-menu-toogle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-menu side="start" menuId="placesMenu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>UMN BnB</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toogle menu="placesMenu">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon slot="start" name="business-outline"></ion-icon>
+            <ion-label>Discover Places</ion-label>
+          </ion-item>
+        </ion-menu-toogle>
+        <ion-menu-toogle menu="placesMenu">
+          <ion-item lines="none" routerLink="/places/tabs/offers">
+            <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+            <ion-label>Your Bookings</ion-label>
+          </ion-item>
+        </ion-menu-toogle>
+        <ion-menu-toogle menu="placesMenu">
+          <ion-item lines="none">
+            <ion-icon slot="start" name="exit-outline"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toogle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
